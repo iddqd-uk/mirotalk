@@ -1,6 +1,8 @@
 # syntax=docker/dockerfile:1.2
 
-FROM docker.io/library/node:22.19-alpine
+FROM docker.io/library/node:22.19-alpine AS node
+
+FROM node AS builder
 
 # https://github.com/miroslavpejic85/mirotalk/commit/<commit_hash_here>
 # to update the source code version, change the commit hash to the required (latest) one
@@ -31,13 +33,39 @@ RUN --mount=type=bind,source=patches,target=/mirotalk/patches \
 COPY ./config/.env.default ./.env
 COPY ./config/config.js ./app/src/config.js
 
-EXPOSE 3000/tcp
+RUN set -x \
+    && mkdir -p /tmp/rootfs/etc \
+    && cd /tmp/rootfs \
+    && echo 'appuser:x:10001:10001::/nonexistent:/sbin/nologin' > ./etc/passwd \
+    && echo 'appuser:x:10001:' > ./etc/group
+
+FROM node AS final
+
+LABEL \
+    # Docs: <https://github.com/opencontainers/image-spec/blob/master/annotations.md>
+    org.opencontainers.image.title="mirotalk" \
+    org.opencontainers.image.description="A JavaScript-based project for real-time communication and collaboration" \
+    org.opencontainers.image.url="https://github.com/iddqd-uk/mirotalk" \
+    org.opencontainers.image.source="https://github.com/miroslavpejic85/mirotalk" \
+    org.opencontainers.image.vendor="iddqd-uk" \
+    org.opencontainers.image.licenses="MIT"
+
+COPY --from=builder /tmp/rootfs /
+COPY --from=builder /mirotalk /mirotalk
+
+WORKDIR /mirotalk
 
 ENV \
+    NPM_CONFIG_UPDATE_NOTIFIER="false" \
     JWT_KEY="please_change_me" \
     API_KEY_SECRET="please_change_me_too" \
     NODE_ENV="production" \
     PORT="3000" \
     HOST=""
+
+# use an unprivileged user
+USER 10001:10001
+
+EXPOSE 3000/tcp
 
 CMD ["npm", "start"]

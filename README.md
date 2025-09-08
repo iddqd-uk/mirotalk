@@ -1,6 +1,6 @@
 # MiroTalk
 
-A JavaScript-based project for real-time communication and collaboration.
+A JavaScript-based [project](https://github.com/miroslavpejic85/mirotalk) for real-time communication and collaboration.
 
 > [!NOTE]
 > The original source code was patched to remove advertisements, sponsored links, stats tracking, and other.
