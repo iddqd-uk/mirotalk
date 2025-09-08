@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.2
 
-FROM docker.io/library/node:22.19-alpine
+FROM docker.io/library/node:24.7-alpine
 
 # https://github.com/miroslavpejic85/mirotalk/commit/<commit_hash_here>
 # to update the source code version, change the commit hash to the required (latest) one
