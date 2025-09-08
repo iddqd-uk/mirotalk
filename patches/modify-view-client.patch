@@ -1,0 +1,15 @@
+diff --git a/public/views/client.html b/public/views/client.html
+index e941fd8..c239d42 100755
+--- a/public/views/client.html
++++ b/public/views/client.html
+@@ -68,10 +68,6 @@
+             rel="stylesheet"
+             href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/atom-one-dark.min.css"
+         />
+-
+-        <!-- JavaScripts -->
+-
+-        <script async src="../js/umami.js"></script>
+     </head>
+ 
+     <body>

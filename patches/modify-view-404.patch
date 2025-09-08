@@ -1,0 +1,15 @@
+diff --git a/public/views/404.html b/public/views/404.html
+index fff3ab1..ce3a397 100644
+--- a/public/views/404.html
++++ b/public/views/404.html
+@@ -17,10 +17,6 @@
+ 
+         <link rel="stylesheet" href="../css/landing.css" />
+         <link rel="stylesheet" href="../css/newcall.css" />
+-
+-        <!-- JavaScripts -->
+-
+-        <script async src="../js/umami.js"></script>
+     </head>
+     <body class="has-animations">
+         <div class="body-wrap">

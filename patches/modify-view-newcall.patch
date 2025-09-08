@@ -1,0 +1,15 @@
+diff --git a/public/views/newcall.html b/public/views/newcall.html
+index 3a65fdb..7c5fd0a 100755
+--- a/public/views/newcall.html
++++ b/public/views/newcall.html
+@@ -44,10 +44,6 @@
+ 
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+ 
+-        <!-- JavaScripts -->
+-
+-        <script async src="../js/umami.js"></script>
+-
+         <!-- xss -->
+ 
+         <script src="https://cdn.jsdelivr.net/npm/xss/dist/xss.min.js"></script>

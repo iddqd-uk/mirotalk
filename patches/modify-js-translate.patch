@@ -1,0 +1,13 @@
+diff --git a/public/js/translate.js b/public/js/translate.js
+index 6e7f998..e9e7295 100644
+--- a/public/js/translate.js
++++ b/public/js/translate.js
+@@ -47,7 +47,7 @@ function googleTranslateElementInit() {
+  */
+ (async function initGoogleTranslate() {
+     try {
+-        await loadScript('https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit');
++        // await loadScript('https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit');
+     } catch (error) {
+         console.error('Failed to load Google Translate script:', error);
+     }
