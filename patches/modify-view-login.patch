@@ -1,0 +1,12 @@
+diff --git a/public/views/login.html b/public/views/login.html
+index 46beef9..0539a66 100644
+--- a/public/views/login.html
++++ b/public/views/login.html
+@@ -40,7 +40,6 @@
+ 
+         <!-- Js scripts -->
+ 
+-        <script async src="../js/umami.js"></script>
+         <script defer src="../js/Brand.js"></script>
+         <script async src="../js/Translate.js"></script>
+ 

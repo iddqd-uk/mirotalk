@@ -1,0 +1,144 @@
+'use strict';
+
+const packageJson = require('../../package.json');
+
+module.exports = {
+  // Branding and customizations require a license: https://codecanyon.net/item/mirotalk-p2p-webrtc-realtime-video-conferences/38376661
+  brand: {
+    htmlInjection: false,
+    app: {
+      language: 'en', // https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes
+      name: 'Call2Me',
+      title: 'Real-time video calls.',
+      description: '',
+      joinDescription: 'Unique call name',
+      joinButtonLabel: 'JOIN',
+      joinLastLabel: 'Your recent call:',
+    },
+    og: {
+      type: 'app-webrtc',
+      siteName: 'MiroTalk',
+      title: 'Click the link to make a call.',
+      description: '',
+      image: '',
+      url: '',
+    },
+    site: {
+      shortcutIcon: '../images/logo.svg',
+      appleTouchIcon: '../images/logo.svg',
+      landingTitle: 'MiroTalk a Free Secure Video Calls, Chat & Screen Sharing.',
+      newCallTitle: 'MiroTalk a Free Secure Video Calls, Chat & Screen Sharing.',
+      newCallRoomTitle: 'Pick name. <br />Share URL. <br />Start conference.',
+      newCallRoomDescription:
+        "Each room has its disposable URL. Just pick a room name and share your custom URL. It's that easy.",
+      loginTitle: 'MiroTalk - Host Protected login required.',
+      clientTitle: 'MiroTalk WebRTC Video call, Chat Room & Screen Sharing.',
+      privacyPolicyTitle: 'MiroTalk - privacy and policy.',
+      stunTurnTitle: 'Test Stun/Turn Servers.',
+      notFoundTitle: 'MiroTalk - 404 Page not found.',
+    },
+    html: {
+      topSponsors: false,
+      features: false,
+      browsers: true,
+      teams: false, // please keep me always true ;)
+      tryEasier: true,
+      poweredBy: false,
+      sponsors: false,
+      advertisers: false,
+      footer: false,
+    },
+    about: {
+      imageUrl: '../images/mirotalk-logo.gif',
+      title: `WebRTC P2P v${packageJson.version}`,
+      html: '',
+    },
+    // https://docs.mirotalk.com/mirotalk-p2p/integration/#widgets-integration
+    widget: {
+      enabled: false,
+    },
+    //...
+  },
+  /**
+   * Configuration for controlling the visibility of buttons in the MiroTalk P2P client.
+   * Set properties to true to show the corresponding buttons, or false to hide them.
+   * captionBtn, showSwapCameraBtn, showScreenShareBtn, showFullScreenBtn, showVideoPipBtn, showDocumentPipBtn -> (auto-detected).
+   */
+  buttons: {
+    main: {
+      showShareQr: false,
+      showShareRoomBtn: true, // For guests
+      showHideMeBtn: true,
+      showFullScreenBtn: true,
+      showAudioBtn: true,
+      showVideoBtn: true,
+      showScreenBtn: true, // autodetected
+      showRecordStreamBtn: false,
+      showChatRoomBtn: true,
+      showCaptionRoomBtn: true,
+      showRoomEmojiPickerBtn: true,
+      showMyHandBtn: true,
+      showWhiteboardBtn: false,
+      showSnapshotRoomBtn: false,
+      showFileShareBtn: true,
+      showDocumentPipBtn: false,
+      showMySettingsBtn: true,
+      showAboutBtn: false, // Please keep me always true, Thank you!
+      showExtraBtn: false,
+    },
+    chat: {
+      showTogglePinBtn: true,
+      showMaxBtn: true,
+      showSaveMessageBtn: true,
+      showMarkDownBtn: true,
+      showChatGPTBtn: false,
+      showFileShareBtn: true,
+      showShareVideoAudioBtn: true,
+      showParticipantsBtn: true,
+    },
+    caption: {
+      showTogglePinBtn: true,
+      showMaxBtn: true,
+    },
+    settings: {
+      showMicOptionsBtn: true,
+      showTabRoomPeerName: true,
+      showTabRoomParticipants: true,
+      showTabRoomSecurity: true,
+      showTabEmailInvitation: true,
+      showCaptionEveryoneBtn: true,
+      showMuteEveryoneBtn: true,
+      showHideEveryoneBtn: true,
+      showEjectEveryoneBtn: true,
+      showLockRoomBtn: true,
+      showUnlockRoomBtn: true,
+      showShortcutsBtn: true,
+    },
+    remote: {
+      showAudioVolume: true,
+      audioBtnClickAllowed: true,
+      videoBtnClickAllowed: true,
+      showVideoPipBtn: true,
+      showKickOutBtn: true,
+      showSnapShotBtn: true,
+      showFileShareBtn: true,
+      showShareVideoAudioBtn: true,
+      showGeoLocationBtn: false,
+      showPrivateMessageBtn: true,
+      showZoomInOutBtn: false,
+      showVideoFocusBtn: true,
+    },
+    local: {
+      showVideoPipBtn: true,
+      showSnapShotBtn: true,
+      showVideoCircleBtn: true,
+      showZoomInOutBtn: false,
+    },
+    whiteboard: {
+      whiteboardLockBtn: false,
+    },
+  },
+  webhook: {
+    enabled: false, // Enable webhook functionality
+  },
+};
